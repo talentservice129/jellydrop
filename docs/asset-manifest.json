@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/tetromino/static/css/main.bed63e2e.chunk.css",
+    "main.js": "/tetromino/static/js/main.9dc11c48.chunk.js",
+    "main.js.map": "/tetromino/static/js/main.9dc11c48.chunk.js.map",
+    "runtime-main.js": "/tetromino/static/js/runtime-main.a2815b10.js",
+    "runtime-main.js.map": "/tetromino/static/js/runtime-main.a2815b10.js.map",
+    "static/js/2.62a030be.chunk.js": "/tetromino/static/js/2.62a030be.chunk.js",
+    "static/js/2.62a030be.chunk.js.map": "/tetromino/static/js/2.62a030be.chunk.js.map",
+    "static/js/3.9dc0f1b3.chunk.js": "/tetromino/static/js/3.9dc0f1b3.chunk.js",
+    "static/js/3.9dc0f1b3.chunk.js.map": "/tetromino/static/js/3.9dc0f1b3.chunk.js.map",
+    "index.html": "/tetromino/index.html",
+    "static/css/main.bed63e2e.chunk.css.map": "/tetromino/static/css/main.bed63e2e.chunk.css.map",
+    "static/js/2.62a030be.chunk.js.LICENSE.txt": "/tetromino/static/js/2.62a030be.chunk.js.LICENSE.txt",
+    "static/media/index.css": "/tetromino/static/media/winter.c5867a9b.jpg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.a2815b10.js",
+    "static/js/2.62a030be.chunk.js",
+    "static/css/main.bed63e2e.chunk.css",
+    "static/js/main.9dc11c48.chunk.js"
+  ]
+}

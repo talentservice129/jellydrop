@@ -1,0 +1,17 @@
+.game-grid {
+    border-color: greenyellow;
+    display: grid;
+    /* @apply border dark:border-gray-700 border-gray-700; */
+}
+
+.bg-grid{
+    /* background-color: #6d79a9; */
+}
+
+.fil{
+    /* border: -2px solid rgba(248, 248, 255, 0.693); */
+}
+
+.m{
+    margin-right: -10px;
+}

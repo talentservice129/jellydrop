@@ -1,0 +1,118 @@
+.ui-button {
+    @apply font-mono border border-transparent;
+    @apply focus:outline-none;
+    background-color: orangered;
+    border: 2px solid orange;
+    /* box-shadow: 2px 2px 8px orange; */
+}
+
+.dark{
+    background-color: orangered;
+    box-shadow: 2px 2px 8px orange;
+}
+
+.ui-button-standard:not(:disabled) {
+    @apply nm-flat-white active:nm-inset-gray-100;
+    @apply dark:nm-flat-gray-800 dark:active:nm-inset-gray-800;
+    background-color: orangered;
+    border: 2px solid orange;
+    box-shadow: 2px 2px 8px orange;
+}
+
+.ui-button-standard:disabled {
+    @apply bg-gray-100 text-gray-400;
+    @apply dark:bg-gray-900 dark:text-gray-600;
+    background-color: orangered;
+    border: 2px solid orange;
+    box-shadow: 2px 2px 8px orange;
+}
+
+.ui-button-standard.active:not(:disabled), .ui-button-standard:active:not(:disabled) {
+    /* @apply nm-inset-gray-100;
+    @apply dark:nm-inset-gray-800; */
+    background-color: orangered;
+    border: 2px solid orange;
+    box-shadow: 2px 2px 8px orange;
+}
+
+.ui-button-trans:not(:disabled) {
+    /* @apply border border-gray-500 bg-gray-400 bg-opacity-20 text-gray-800
+    dark:bg-opacity-20 dark:border dark:bg-white dark:border-white dark:text-white;
+    background-color: orangered;
+    border: 2px solid orange;
+    box-shadow: 2px 2px 8px orange; */
+    background-color: orangered;
+    border: 2px solid orange;
+    box-shadow: 2px 2px 8px orange;
+}
+
+.ui-button-trans.active:not(:disabled), .ui-button-trans:active:not(:disabled) {
+    /* @apply border-transparent dark:border-transparent;
+    background-color: orangered;
+    border: 2px solid orange;
+    box-shadow: 2px 2px 8px orange; */
+}
+
+.ui-button-trans:disabled {
+    @apply text-gray-200 border-gray-200 bg-gray-200 dark:text-gray-800 dark:bg-gray-700 dark:border-gray-800;
+    background-color: orangered;
+    border: 2px solid orange;
+    box-shadow: 2px 2px 8px orange;
+}
+
+.ui-button.ui-shape-round {
+    @apply rounded-full;
+    background-color: orangered;
+    border: 2px solid orange;
+    /* box-shadow: 2px 2px 8px orange; */
+}
+
+.ui-button.ui-shape-normal {
+    background: rgb(238,79,186);
+    background: linear-gradient(180deg, rgba(238,79,186,1) 0%, rgba(213,42,152,1) 49%);
+    @apply rounded-lg;
+    background-color: orangered;
+    border: 2px solid orange;
+    /* box-shadow: 2px 2px 8px orange; */
+    border-radius: 1.5rem;
+}
+
+.ui-button.ui-shape-left {
+    border-radius: 50% 10% 10% 50%;
+    background-color: orangered;
+    border: 2px solid orange;
+    box-shadow: 2px 2px 8px orange;
+}
+
+.ui-button.ui-shape-right {
+    border-radius: 10% 50% 50% 10%;
+    background-color: orangered;
+    border: 2px solid orange;
+    box-shadow: 2px 2px 8px orange;
+}
+
+.ui-button.ui-shape-up {
+    border-radius: 50% 50% 10% 10%;
+    background-color: orangered;
+    border: 2px solid orange;
+    box-shadow: 2px 2px 8px orange;
+}
+
+.ui-button.ui-shape-down {
+    border-radius: 10% 10% 50% 50%;
+    background-color: orangered;
+    border: 2px solid orange;
+    box-shadow: 2px 2px 8px orange;
+}
+
+.dark .ui-button-trans:not(:disabled){
+    background-color: orangered;
+}
+
+.dark .ui-button-trans:disabled{
+    background-color: orangered;
+}
+
+.dark .ui-button-trans.active:not(:disabled){
+    background-color: orangered;
+}

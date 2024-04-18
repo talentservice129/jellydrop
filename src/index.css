@@ -1,0 +1,169 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@tailwind screens;
+
+@layer base {
+    @font-face {
+        font-family: 'digits';
+        src: url('fonts/Segment7-4Gml.otf') format('opentype');
+    }
+
+    html,
+    body {
+        @apply dark:bg-gray-800 dark:text-gray-200 text-gray-800;
+        @apply block relative h-full m-0 p-0 overflow-hidden;
+
+        -ms-touch-action: none;
+        -webkit-touch-callout: none;
+        -ms-content-zooming: none;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        -webkit-overflow-scrolling: touch;
+        overflow-scrolling: touch;
+
+        -webkit-text-size-adjust: none;
+        -moz-text-size-adjust: none;
+        -ms-text-size-adjust: none;
+        -webkit-tap-highlight-color:  rgba(255, 255, 255, 0);
+    }
+
+    #root {
+        @apply flex flex-col w-full h-full;
+    }
+
+    .bg-black{
+        border-radius: 0.25rem;
+        opacity: 0.85;
+    }
+
+    ul {
+        @apply p-0 m-0;
+    }
+
+    ::-webkit-scrollbar {
+        @apply w-3 h-3;
+    }
+
+    ::-webkit-scrollbar-corner {
+        @apply bg-transparent;
+    }
+
+    ::-webkit-scrollbar-thumb {
+        @apply dark:bg-yellow-800 bg-blue-200;
+        @apply bg-clip-padding border border-transparent rounded-lg;
+    }
+
+    ::-webkit-scrollbar-track {
+        @apply bg-clip-padding;
+        @apply border border-transparent;
+    }
+}
+
+@layer components {
+    .text-primary {
+        @apply dark:text-yellow-400 text-blue-600;
+    }
+
+    .text-light {
+        @apply dark:text-gray-600 text-gray-400;
+    }
+
+    .border-primary {
+        @apply dark:border-yellow-400 border-blue-600;
+        background-color: #1b97f4;
+    }
+
+    .text-secondary {
+        @apply dark:text-green-400 text-red-600;
+    }
+
+    .border-secondary {
+        @apply dark:border-green-400 border-red-600;
+        background-color: #1b97f4;
+    }
+
+    .MuiBackdrop-root {
+        @apply backdrop-filter backdrop-blur-sm bg-transparent;
+    }
+}
+
+.border-opacity-100{
+    border-color: black;
+}
+
+
+.main-bg{
+    background-image: url('../src/bg-main.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.bg-playing-screen{
+    background-image: url('../src/spring.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.bg-winter{
+    background-image: url('../src/winter.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    /* animation: animatedBackground 75s linear infinite; */
+}
+.bg-summer{
+    background-image: url('../src/summer.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.bg-spring{
+    background-image: url('../src/spring.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    /* animation: animatedBackground 75s linear infinite; */
+}
+.bg-autumn{
+    background-image: url('../src/autumn.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+
+/* backgrounds css */
+/* .effect1 {
+    width: 100vw;
+    height: 100vh;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    background-image: url('../src/bg-main.jpg');
+    background-repeat: no-repeat;
+    background-position: 0px 0px;
+    background-size: cover;
+    animation: animatedBackground 75s linear infinite;
+  }
+  
+@media only screen and(max-width: 600px){
+    .effect1{
+        background-size: 1000px 1000px;
+    }
+}
+@media only screen and(min-width: 601px){
+    .effect1{
+        background-size:cover;
+    }
+}
+
+@keyframes animatedBackground {
+    0% {
+      background-position: 0 0vw;
+    }
+    50% {
+      background-position: 0vh -50vw;
+    }
+    100% {
+        background-position: 0vh 0vw;
+    }
+  } */
+
+  .bg-bl{
+    background-color: #292524;
+  }
