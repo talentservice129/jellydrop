@@ -116,3 +116,67 @@
 .dark .ui-button-trans.active:not(:disabled){
     background-color: orangered;
 }
+
+.bg-spring .ui-button.ui-button.ui-shape-up,
+.bg-spring .ui-button.ui-button.ui-shape-left,
+.bg-spring .ui-button.ui-button.ui-shape-right,
+.bg-spring .ui-button.ui-button.ui-shape-down {
+    border-color: #c3247a;
+    background-color: #c3247a;
+}
+
+.bg-spring .ui-button.ui-button.ui-shape-round,
+.bg-spring .ui-button.ui-button.ui-shape-left[data-testid="game-rotate-left"],
+.bg-spring .ui-button.ui-button.ui-shape-right[data-testid="game-rotate-right"] {
+    color: white;
+    border-color: #8f075b;
+    background-color: #8f075b;
+}
+
+.bg-summer .ui-button.ui-button.ui-shape-up,
+.bg-summer .ui-button.ui-button.ui-shape-left,
+.bg-summer .ui-button.ui-button.ui-shape-right,
+.bg-summer .ui-button.ui-button.ui-shape-down {
+    border-color: #d8a506;
+    background-color: #d8a506;
+}
+
+.bg-summer .ui-button.ui-button.ui-shape-round,
+.bg-summer .ui-button.ui-button.ui-shape-left[data-testid="game-rotate-left"],
+.bg-summer .ui-button.ui-button.ui-shape-right[data-testid="game-rotate-right"] {
+    color: white;
+    border-color: #2d4218;
+    background-color: #2d4218;
+}
+
+.bg-autumn .ui-button.ui-button.ui-shape-up,
+.bg-autumn .ui-button.ui-button.ui-shape-left,
+.bg-autumn .ui-button.ui-button.ui-shape-right,
+.bg-autumn .ui-button.ui-button.ui-shape-down {
+    border-color: #ac3712;
+    background-color: #ac3712;
+}
+
+.bg-autumn .ui-button.ui-button.ui-shape-round,
+.bg-autumn .ui-button.ui-button.ui-shape-left[data-testid="game-rotate-left"],
+.bg-autumn .ui-button.ui-button.ui-shape-right[data-testid="game-rotate-right"] {
+    color: white;
+    border-color: #8a0005;
+    background-color: #8a0005;
+}
+
+.bg-winter .ui-button.ui-button.ui-shape-up,
+.bg-winter .ui-button.ui-button.ui-shape-left,
+.bg-winter .ui-button.ui-button.ui-shape-right,
+.bg-winter .ui-button.ui-button.ui-shape-down {
+    border-color: #7cd5fa;
+    background-color: #7cd5fa;
+}
+
+.bg-winter .ui-button.ui-button.ui-shape-round,
+.bg-winter .ui-button.ui-button.ui-shape-left[data-testid="game-rotate-left"],
+.bg-winter .ui-button.ui-button.ui-shape-right[data-testid="game-rotate-right"] {
+    color: white;
+    border-color: #0a69bd;
+    background-color: #0a69bd;
+}

@@ -92,6 +92,11 @@ export namespace AppActions {
     );
 
     /**
+     * Change to the next season
+     */
+    export const nextSeason = createAction(prefix('next_season'));
+
+    /**
      * Restores saved state from localStorage.
      */
     export const persist = createAction<AppPersist>(prefix('persist'));

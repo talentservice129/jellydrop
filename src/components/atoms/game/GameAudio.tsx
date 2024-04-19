@@ -1,11 +1,13 @@
-import {FC, useEffect, useRef} from 'react';
+import {FC, RefObject, useEffect, useRef} from 'react';
 
 export interface GameAudioProps {
     autoPlay?: boolean;
 
     loop?: boolean;
 
-    onDone?: () => void;
+    muted?: boolean;
+
+    onDone?: (ref?: RefObject<HTMLAudioElement>) => void;
 
     onLoaded?: () => void;
 
@@ -17,6 +19,7 @@ export interface GameAudioProps {
 export const GameAudio: FC<GameAudioProps> = ({
     autoPlay = true,
     loop,
+    muted,
     onDone,
     onLoaded,
     src,
@@ -32,12 +35,13 @@ export const GameAudio: FC<GameAudioProps> = ({
 
     return (
         <audio
+            muted={muted}
             src={src}
             ref={ref}
             autoPlay={autoPlay}
             controls={false}
             loop={Boolean(loop)}
-            onEnded={() => onDone && onDone()}
+            onEnded={() => onDone && onDone(ref)}
             onCanPlayThrough={() => onLoaded && onLoaded()}
         />
     );

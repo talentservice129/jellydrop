@@ -73,6 +73,11 @@ export namespace AppSelectors {
     export const keys = createSelector(app, (app) => app.keys);
 
     /**
+     * Selects the season
+     */
+    export const season = createSelector(app, (app) => app.season);
+
+    /**
      * Selects values to persist to local storage.
      */
     export const persist = createSelector(
