@@ -1,6 +1,8 @@
 import {ActionReducerMapBuilder, createSlice} from '@reduxjs/toolkit';
 import ReactGA from 'react-ga';
 import {
+    SOUND_BLOCK_DESTROY,
+    SOUND_BLOCK_TOUCH,
     SOUND_DROP,
     SOUND_FINISHED,
     SOUND_LEVEL_10,
@@ -101,6 +103,11 @@ export namespace GameState {
                                     state.player.type,
                                     lines!
                                 );
+
+                                gameSound(state, SOUND_BLOCK_TOUCH);
+                                if (lines && lines > 0) {
+                                    gameSound(state, SOUND_BLOCK_DESTROY);
+                                }
                                 if (
                                     old_level !== state.level &&
                                     state.level % 5 === 0

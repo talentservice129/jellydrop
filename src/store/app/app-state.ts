@@ -117,6 +117,12 @@ export namespace AppState {
                             ...restore
                         };
                     }
+                })
+                .addCase(AppActions.nextSeason, (state) => {
+                    return {
+                        ...state,
+                        season: (state.season + 1) % 4
+                    };
                 });
         }
     });

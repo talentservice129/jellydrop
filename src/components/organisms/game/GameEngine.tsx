@@ -162,7 +162,7 @@ export const GameEngine: FC<ClassNameProps> = ({className}) => {
                 // }}
             >
                 <GameGrid />
-                {running && <GameMusic />}
+                <GameMusic />
                 <GameSoundTracks />
                 {starting && !loaded && (
                     <GamePreloader

@@ -49,12 +49,12 @@ export const OptionsAudio: FC = () => {
                 value={musicVolume}
                 onChange={(value) => dispatch(AppActions.musicVolume(value))}
             />
-            <div>Music Type</div>
+            {/* <div>Music Type</div>
             <UiSelect
                 options={MUSIC_TYPES}
                 value={musicType}
                 onChange={(value) => dispatch(AppActions.musicType(value))}
-            />
+            /> */}
         </>
     );
 };

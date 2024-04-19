@@ -72,6 +72,11 @@ export interface AppModel {
      * Player's starting level.
      */
     start_level: number;
+
+    /**
+     * Season
+     */
+    season: number;
 }
 
 /**
@@ -89,7 +94,8 @@ export const APP_INITIAL_STATE: AppModel = {
     sound: true,
     sound_volume: 80,
     start_level: 1,
-    keys: DEFAULT_KEY_BINDINGS
+    keys: DEFAULT_KEY_BINDINGS,
+    season: Math.floor(Math.random() * 4)
 };
 
 /**

@@ -17,9 +17,11 @@ import {GameDesktop} from './GameDesktop';
 import {GameMobile} from './GameMobile';
 import {Welcome} from './Welcome';
 import {random} from 'lodash';
+import {AppSelectors} from '../../store/app/app-selectors';
 
 export const App: FC = () => {
     const welcoming = useSelector(GameSelectors.welcoming);
+    const season = useSelector(AppSelectors.season);
     const isWideScreen = useMediaQuery('(min-width:600px)');
     const isShortScreen = useMediaQuery('(max-height:850px)');
     const isNarrowScreen = useMediaQuery('(max-width:380px)');
@@ -60,39 +62,31 @@ export const App: FC = () => {
         | '10'
         | '20'
         | '30';
-    const bg = {
-        '1': 'bg-summer',
-        '2': 'bg-winter',
-        '3': 'bg-autumn'
-    } as const;
-    const bgValues = Object.values(bg);
-    const [shuffledBg, setShuffledBg] = useState<string | undefined>(
-        bgValues[0]
-    );
+    const bg = ['bg-spring', 'bg-summer', 'bg-autumn', 'bg-winter'];
+    // const bgValues = Object.values(bg);
+    // const [shuffledBg, setShuffledBg] = useState<string | undefined>(
+    //     bgValues[0]
+    // );
     // const randomBg1 = shuffle(Object.values(bg))[1];
     // const randomBg2 = shuffle(Object.values(bg))[2];
 
-    useEffect(() => {
-        const shuffledArray = [...bgValues];
-        for (let i = shuffledArray.length - 1; i > 0; i--) {
-            const j = Math.floor(Math.random() * (i + 1));
-            [shuffledArray[i], shuffledArray[j]] = [
-                shuffledArray[j],
-                shuffledArray[i]
-            ];
-        }
-        setShuffledBg(shuffledArray[0]);
-    }, [level]);
+    // useEffect(() => {
+    //     const shuffledArray = [...bgValues];
+    //     for (let i = shuffledArray.length - 1; i > 0; i--) {
+    //         const j = Math.floor(Math.random() * (i + 1));
+    //         [shuffledArray[i], shuffledArray[j]] = [
+    //             shuffledArray[j],
+    //             shuffledArray[i]
+    //         ];
+    //     }
+    //     setShuffledBg(shuffledArray[0]);
+    // }, [level]);
 
     useEffect(() => {
         console.log(level);
     }, [level]);
     return (
-        <div
-            className={`flex flex-col w-full h-full ${
-                shuffledBg || 'bg-spring'
-            }`}
-        >
+        <div className={`flex flex-col w-full h-full ${bg[season]}`}>
             {welcoming ? <Welcome /> : game}
             <PauseDialog />
             <FinishDialog />
