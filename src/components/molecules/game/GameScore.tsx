@@ -21,7 +21,7 @@ export const GameScore: FC<GameScoreProps & ClassNameProps> = ({
                 'flex font-mono items-baseline space-x-4'
             )}
         >
-            <div className="text-light">#{rank}</div>
+            <div className="">#{rank}</div>
             <GameDigits digits={6} value={score} />
         </div>
     );

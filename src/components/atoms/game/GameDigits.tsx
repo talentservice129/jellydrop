@@ -38,8 +38,8 @@ export const GameDigits: FC<GameDigitsProps & ClassNameProps> = ({
             )}
         >
             <div className="relative mx-auto">
-                <div className={classNames('opacity-20', color)}>{zeros}</div>
-                <div className={classNames('absolute top-0 left-0', color)}>
+                <div className={classNames('opacity-0')}>{zeros}</div>
+                <div className={classNames('absolute top-0 left-0')}>
                     <span dangerouslySetInnerHTML={spaces} />
                     <span>{maxDigits}</span>
                 </div>

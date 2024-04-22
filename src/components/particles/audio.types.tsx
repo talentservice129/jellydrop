@@ -12,23 +12,10 @@ export const AUDIO_FILES = [
 
 export const AUDIO_BG = `${environment.base}/audio/music/bg.mp3`;
 
-export const SOUND_FINISHED = `${environment.base}/audio/sounds/power-down-13.mp3`;
-export const SOUND_LEVEL = `${environment.base}/audio/sounds/retro-chip-power.mp3`;
-export const SOUND_SCORE = `${environment.base}/audio/sounds/ui-quirky-19.mp3`;
-export const SOUND_DROP = `${environment.base}/audio/sounds/zapsplat_bambo_swoosh.mp3`;
-export const SOUND_LEVEL_10 = `${environment.base}/audio/sounds/zapsplat_level_up.mp3`;
 export const SOUND_BLOCK_TOUCH = `${environment.base}/audio/sounds/jelly-kick.mp3`;
 export const SOUND_BLOCK_DESTROY = `${environment.base}/audio/sounds/jelly-destroyed.mp3`;
 
-export const PRELOAD_AUDIO = [
-    SOUND_FINISHED,
-    SOUND_LEVEL,
-    SOUND_SCORE,
-    SOUND_DROP,
-    SOUND_LEVEL_10,
-    SOUND_BLOCK_TOUCH,
-    SOUND_BLOCK_DESTROY
-];
+export const PRELOAD_AUDIO = [SOUND_BLOCK_TOUCH, SOUND_BLOCK_DESTROY];
 
 export const VOLUME_OPTIONS: Array<UiOption<number>> = Array(11)
     .fill(null)

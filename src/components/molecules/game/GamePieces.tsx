@@ -13,12 +13,15 @@ export interface GamePiecesProps {
 
     reverse?: boolean;
 
+    horizontal?: boolean;
+
     selectPieces: (state: AppState) => NextTetrominos;
 }
 
 export const GamePieces: FC<GamePiecesProps & ClassNameProps> = ({
     label,
     reverse = false,
+    horizontal = false,
     selectPieces,
     className
 }) => {
@@ -28,7 +31,10 @@ export const GamePieces: FC<GamePiecesProps & ClassNameProps> = ({
             <div
                 className={classNames(
                     className,
-                    'flex flex-col relative w-full bg-black'
+                    'flex relative w-full bg-black',
+                    {
+                        'flex-col': !horizontal
+                    }
                 )}
             >
                 {pieces.map((type, indx) => (
@@ -37,6 +43,7 @@ export const GamePieces: FC<GamePiecesProps & ClassNameProps> = ({
                         values={type ? GAME_PIECES[type][0] : undefined}
                         type={type}
                         grid={false}
+                        horizontal={horizontal}
                     />
                 ))}
             </div>

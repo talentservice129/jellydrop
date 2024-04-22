@@ -2,11 +2,7 @@ import {ActionReducerMapBuilder, createSlice} from '@reduxjs/toolkit';
 import ReactGA from 'react-ga';
 import {
     SOUND_BLOCK_DESTROY,
-    SOUND_BLOCK_TOUCH,
-    SOUND_DROP,
-    SOUND_FINISHED,
-    SOUND_LEVEL_10,
-    SOUND_SCORE
+    SOUND_BLOCK_TOUCH
 } from '../../components/particles/audio.types';
 import {randTetro} from '../../components/particles/utilities.types';
 import {
@@ -98,27 +94,19 @@ export namespace GameState {
                             );
                             if (collision) {
                                 const old_level = state.level;
-                                const sound = gameScore(
-                                    state,
-                                    state.player.type,
-                                    lines!
-                                );
+                                gameScore(state, state.player.type, lines!);
 
-                                gameSound(state, SOUND_BLOCK_TOUCH);
-                                if (lines && lines > 0) {
-                                    gameSound(state, SOUND_BLOCK_DESTROY);
+                                if (snapshot?.app.sound) {
+                                    gameSound(state, SOUND_BLOCK_TOUCH);
+                                    if (lines && lines > 0) {
+                                        gameSound(state, SOUND_BLOCK_DESTROY);
+                                    }
                                 }
                                 if (
                                     old_level !== state.level &&
                                     state.level % 5 === 0
                                 ) {
                                     state.toast_message = `Level ${state.level}`;
-                                    if (snapshot?.app.sound) {
-                                        gameSound(state, SOUND_LEVEL_10);
-                                    }
-                                }
-                                if (snapshot?.app.sound && sound) {
-                                    gameSound(state, sound);
                                 }
                                 state.player_freeze = false;
                                 state.hold_enable = true;
@@ -145,8 +133,6 @@ export namespace GameState {
                                     rotateNoop
                                 );
                                 if (gameCollision(trans, state.buffer)) {
-                                    snapshot?.app.sound &&
-                                        gameSound(state, SOUND_FINISHED);
                                     state.restart_ticker++;
                                     state.status = GameStatus.FINISHING;
                                 } else {
@@ -205,10 +191,6 @@ export namespace GameState {
                             );
                             state.player_freeze = true;
                             state.ghost = undefined;
-                            if (snapshot?.app.sound) {
-                                gameSound(state, SOUND_DROP);
-                                gameSound(state, SOUND_SCORE);
-                            }
                         }
                     }
                 )

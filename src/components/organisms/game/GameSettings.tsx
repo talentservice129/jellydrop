@@ -37,7 +37,7 @@ export const GameOptions: FC<GameSettingsProps & ClassNameProps> = ({
                     Reset Options
                 </UiButton>
             </div>
-            {darkMode && <AppDarkMode className="ml-auto mr-auto mt-5" />}
+            {/* {darkMode && <AppDarkMode className="ml-auto mr-auto mt-5" />} */}
         </div>
     );
 };

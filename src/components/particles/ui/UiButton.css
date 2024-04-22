@@ -123,6 +123,7 @@
 .bg-spring .ui-button.ui-button.ui-shape-down {
     border-color: #c3247a;
     background-color: #c3247a;
+    box-shadow: 2px 2px 8px #c3247a;
 }
 
 .bg-spring .ui-button.ui-button.ui-shape-round,
@@ -131,6 +132,7 @@
     color: white;
     border-color: #8f075b;
     background-color: #8f075b;
+    box-shadow: 2px 2px 8px #8f075b;
 }
 
 .bg-summer .ui-button.ui-button.ui-shape-up,
@@ -139,6 +141,7 @@
 .bg-summer .ui-button.ui-button.ui-shape-down {
     border-color: #d8a506;
     background-color: #d8a506;
+    box-shadow: 2px 2px 8px #d8a506;
 }
 
 .bg-summer .ui-button.ui-button.ui-shape-round,
@@ -147,6 +150,7 @@
     color: white;
     border-color: #2d4218;
     background-color: #2d4218;
+    box-shadow: 2px 2px 8px #2d4218;
 }
 
 .bg-autumn .ui-button.ui-button.ui-shape-up,
@@ -155,6 +159,7 @@
 .bg-autumn .ui-button.ui-button.ui-shape-down {
     border-color: #ac3712;
     background-color: #ac3712;
+    box-shadow: 2px 2px 8px #ac3712;
 }
 
 .bg-autumn .ui-button.ui-button.ui-shape-round,
@@ -163,6 +168,7 @@
     color: white;
     border-color: #8a0005;
     background-color: #8a0005;
+    box-shadow: 2px 2px 8px #8a0005;
 }
 
 .bg-winter .ui-button.ui-button.ui-shape-up,
@@ -171,6 +177,7 @@
 .bg-winter .ui-button.ui-button.ui-shape-down {
     border-color: #7cd5fa;
     background-color: #7cd5fa;
+    box-shadow: 2px 2px 8px #7cd5fa;
 }
 
 .bg-winter .ui-button.ui-button.ui-shape-round,
@@ -179,4 +186,5 @@
     color: white;
     border-color: #0a69bd;
     background-color: #0a69bd;
+    box-shadow: 2px 2px 8px #0a69bd;
 }

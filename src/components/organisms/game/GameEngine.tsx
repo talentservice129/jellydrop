@@ -62,11 +62,11 @@ export const GameEngine: FC<ClassNameProps> = ({className}) => {
             //     });
             // });
 
-            document.addEventListener('touchmove', (e) => {
-                [...e.changedTouches].forEach((touch) => {
-                    // console.log('Start');
-                });
-            });
+            // document.addEventListener('touchmove', (e) => {
+            //     [...e.changedTouches].forEach((touch) => {
+            //         // console.log('Start');
+            //     });
+            // });
             const handleTouchEnd = (e: TouchEvent) => {
                 [...e.changedTouches].forEach((touch) => {
                     const delay = 500;
@@ -83,10 +83,24 @@ export const GameEngine: FC<ClassNameProps> = ({className}) => {
                     }
                     console.log(`Swipe direction: ${direction}`);
                     if (direction === 'left') {
-                        dispatch(GameActions.move(GamePlayerDirection.LEFT));
+                        const step = Math.ceil(
+                            (10 * Math.abs(deltaX)) / window.innerWidth
+                        );
+                        for (let i = 0; i < step; i++) {
+                            dispatch(
+                                GameActions.move(GamePlayerDirection.LEFT)
+                            );
+                        }
                     }
                     if (direction === 'right') {
-                        dispatch(GameActions.move(GamePlayerDirection.RIGHT));
+                        const step = Math.ceil(
+                            (10 * Math.abs(deltaX)) / window.innerWidth
+                        );
+                        for (let i = 0; i < step; i++) {
+                            dispatch(
+                                GameActions.move(GamePlayerDirection.RIGHT)
+                            );
+                        }
                     }
                     if (direction === 'up') {
                         dispatch(GameActions.rotate(GamePlayerDirection.RIGHT));
@@ -100,9 +114,36 @@ export const GameEngine: FC<ClassNameProps> = ({className}) => {
                 });
             };
             document.addEventListener('touchend', handleTouchEnd);
+            const handleTouchMove = (e: TouchEvent) => {
+                [...e.changedTouches].forEach((touch) => {
+                    const delay = 500;
+                    const touchEndX = touch.pageX;
+                    const touchEndY = touch.pageY;
+                    const deltaX = touchEndX - touchStartX;
+                    const deltaY = touchEndY - touchStartY;
+                    touchStartX = touchEndX;
+                    touchStartY = touchStartY;
+                    // Determine the direction based on deltaX and deltaY
+                    let direction;
+                    if (Math.abs(deltaX) > Math.abs(deltaY)) {
+                        direction = deltaX > 0 ? 'right' : 'left';
+                    } else {
+                        direction = deltaY > 0 ? 'down' : 'up';
+                    }
+                    console.log(`Swipe direction: ${direction}`);
+                    if (direction === 'left') {
+                        dispatch(GameActions.move(GamePlayerDirection.LEFT));
+                    }
+                    if (direction === 'right') {
+                        dispatch(GameActions.move(GamePlayerDirection.RIGHT));
+                    }
+                });
+            };
+            // document.addEventListener('touchmove', handleTouchMove);
             return () => {
                 document.removeEventListener('touchend', handleTouchEnd);
                 document.removeEventListener('touchstart', handleTouchStart);
+                // document.removeEventListener('touchmove', handleTouchMove);
             };
         }
     }, [dispatch, Swipe]);

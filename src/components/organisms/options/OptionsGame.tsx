@@ -23,14 +23,14 @@ export const OptionsGame: FC = () => {
 
     return (
         <>
-            <div>Ghost Piece</div>
+            {/* <div>Ghost Piece</div>
             <UiButton
                 className="flex rounded-full text-[12px] p-2 justify-center"
                 active={ghostPiece}
                 onClick={() => dispatch(AppActions.ghostPiece())}
             >
                 {ghostPiece ? <FaCheck /> : <FaTimes />}
-            </UiButton>
+            </UiButton> */}
             <div>Left Hand</div>
             {/* <GameControls Click={toggleHand} // Pass the left-hand click callback
             /> */}
@@ -60,14 +60,14 @@ export const OptionsGame: FC = () => {
             >
                 {Swipe === 'on' ? <FaCheck /> : <FaTimes />}
             </UiButton>
-            <div>D-Pad</div>
+            {/* <div>D-Pad</div>
             <UiButton
                 className="flex rounded-full text-[12px] p-2 justify-center"
                 active={Swipe === 'off'}
                 onClick={toggleSwipe}
             >
                 {Swipe === 'off' ? <FaCheck /> : <FaTimes />}
-            </UiButton>
+            </UiButton> */}
         </>
     );
 };

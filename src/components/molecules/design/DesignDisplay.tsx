@@ -12,6 +12,8 @@ export interface DesignDisplayProps {
 
     grid?: boolean;
 
+    horizontal?: boolean;
+
     type?: TetrominosType;
 
     values?: GamePiece;
@@ -20,6 +22,7 @@ export interface DesignDisplayProps {
 export const DesignDisplay: FC<DesignDisplayProps & ClassNameProps> = ({
     center = [2, 1],
     grid = true,
+    horizontal = false,
     count = 4,
     type = TetrominosType.Z,
     values,
@@ -37,8 +40,10 @@ export const DesignDisplay: FC<DesignDisplayProps & ClassNameProps> = ({
 
     return (
         <div
-            className={classNames(className, 'grid w-full min-w-full', {
-                'game-grid': grid
+            className={classNames(className, 'grid', {
+                'game-grid': grid,
+                'w-full min-w-full': !horizontal,
+                'flex-1': horizontal
             })}
             style={{gridTemplateColumns: `repeat(${count}, minmax(0, 1fr))`}}
         >

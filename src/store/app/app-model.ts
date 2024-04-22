@@ -83,7 +83,7 @@ export interface AppModel {
  * Default state for the app.
  */
 export const APP_INITIAL_STATE: AppModel = {
-    dark: false,
+    dark: true,
     ghost_piece: true,
     swipe: 'off',
     high_scores: [],

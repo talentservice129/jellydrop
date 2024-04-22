@@ -21,7 +21,7 @@ export const GameNumber: FC<GameNumberProps> = ({
     return (
         <GameValue label={label} reverse={reverse}>
             <GameDigits
-                className="text-[1.25rem] h-[1.9rem] sm:text-2xl sm:h-[2.5rem]"
+                className="text-[1.25rem] h-[1.9rem] sm:text-2xl sm:h-[2.5rem] gd-wrap"
                 digits={7}
                 primary={primary}
                 value={value}

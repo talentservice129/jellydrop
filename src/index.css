@@ -167,3 +167,27 @@
   .bg-bl{
     background-color: #292524;
   }
+
+.bg-spring .gd-wrap {
+    border-color: #8f075b;
+    background-color: #8f075b;
+    box-shadow: 2px 2px 8px #c3247a;
+}
+
+.bg-summer .gd-wrap {
+    border-color: #2d4218;
+    background-color: #2d4218;
+    box-shadow: 2px 2px 8px #d8a506;
+}
+
+.bg-autumn .gd-wrap {
+    border-color: #8a0005;
+    background-color: #8a0005;
+    box-shadow: 2px 2px 8px #ac3712;
+}
+
+.bg-winter .gd-wrap {
+    border-color: #0a69bd;
+    background-color: #0a69bd;
+    box-shadow: 2px 2px 8px #7cd5fa;
+}

@@ -1,4 +1,3 @@
-import {SOUND_LEVEL, SOUND_SCORE} from '../components/particles/audio.types';
 import {GameModel} from '../store/game/game-model';
 import {GAME_PIECES, GamePiece} from './game-player';
 import {TetrominosType} from './game-tetrominos';
@@ -88,7 +87,7 @@ export const gameScore = (
     state: GameScore,
     type: TetrominosType,
     lines: 0 | 1 | 2 | 3 | 4
-): string | undefined => {
+): void => {
     state.score += gamePoints(state.level, type, lines!);
     // Calculate the number of lines to clear for the next level
     const linesToClearForNextLevel = state.level + 1;
@@ -101,10 +100,8 @@ export const gameScore = (
         state.lines_total += linesToClearForNextLevel;
         state.lines_level = 0;
         state.level++;
-        return SOUND_LEVEL;
     }
 
     if (!state.player_freeze) {
-        return SOUND_SCORE;
     }
 };

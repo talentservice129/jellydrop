@@ -1,5 +1,5 @@
 import classNames from 'classnames';
-import {FC} from 'react';
+import {FC, useMemo} from 'react';
 import {useAppDispatch} from '../../../store/app-store';
 import {AppActions} from '../../../store/app/app-actions';
 import {AppDarkMode} from '../../molecules/app/AppDarkMode';
@@ -17,14 +17,13 @@ export const GameOptions: FC<GameOptionsProps & ClassNameProps> = ({
     darkMode,
     className
 }) => {
-    const dispatch = useAppDispatch();
     return (
         <div className={classNames(className, 'flex flex-col')}>
             <div className="grid grid-cols-2 gap-2">
-                <OptionsKeyBindings />
+                {/* <OptionsKeyBindings /> */}
                 <OptionsGame />
-                <OptionsAudio />
-                <UiButton
+                {/* <OptionsAudio /> */}
+                {/* <UiButton
                     className="mt-3 py-2"
                     onClick={() => dispatch(AppActions.resetScore())}
                 >
@@ -35,7 +34,7 @@ export const GameOptions: FC<GameOptionsProps & ClassNameProps> = ({
                     onClick={() => dispatch(AppActions.resetOptions())}
                 >
                     Reset Options
-                </UiButton>
+                </UiButton> */}
             </div>
         </div>
     );
