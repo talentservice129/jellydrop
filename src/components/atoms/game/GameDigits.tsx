@@ -10,6 +10,8 @@ export interface GameDigitsProps {
 
     primary?: boolean;
 
+    center?: boolean;
+
     value: number;
 }
 
@@ -17,6 +19,7 @@ export const GameDigits: FC<GameDigitsProps & ClassNameProps> = ({
     value,
     digits,
     primary = true,
+    center = false,
     className
 }) => {
     const zeros = useZeros(digits);
@@ -39,8 +42,13 @@ export const GameDigits: FC<GameDigitsProps & ClassNameProps> = ({
         >
             <div className="relative mx-auto">
                 <div className={classNames('opacity-0')}>{zeros}</div>
-                <div className={classNames('absolute top-0 left-0')}>
-                    <span dangerouslySetInnerHTML={spaces} />
+                <div
+                    className={classNames('absolute top-0', {
+                        'left-0': !center,
+                        'left-1/2 transform -translate-x-1/2': center
+                    })}
+                >
+                    {!center && <span dangerouslySetInnerHTML={spaces} />}
                     <span>{maxDigits}</span>
                 </div>
             </div>

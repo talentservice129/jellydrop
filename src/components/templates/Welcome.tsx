@@ -1,4 +1,4 @@
-import {FC, useMemo} from 'react';
+import {FC, useEffect, useMemo, useRef, useState} from 'react';
 import {useSelector} from 'react-redux';
 import {environment} from '../../environment/environment';
 import {AppActions} from '../../store/app/app-actions';
@@ -21,6 +21,7 @@ export const Welcome: FC<WelcomeProps> = ({
     const startLevel = useSelector(selectStart);
     const music = useSelector(AppSelectors.music);
     const musicVolume = useSelector(AppSelectors.musicVolume);
+    const [isSplash, setSplash] = useState(true);
 
     const menu: Array<AppMenuItem> = useMemo(() => {
         return [
@@ -39,6 +40,21 @@ export const Welcome: FC<WelcomeProps> = ({
             }
         ];
     }, [startLevel]);
+
+    if (isSplash) {
+        return (
+            <div className="flex h-full relative splash-bg bg-black opacity-100">
+                <button
+                    className="focus:outline-none outline-none text-3xl whitespace-nowrap absolute bottom-[15%] left-1/2 transform -translate-x-1/2"
+                    onClick={() => {
+                        setSplash(false);
+                    }}
+                >
+                    Press here to continue
+                </button>
+            </div>
+        );
+    }
 
     return (
         // Main Screen Background

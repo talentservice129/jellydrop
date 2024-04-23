@@ -6,9 +6,13 @@ import {GameEngine} from '../organisms/game/GameEngine';
 import {GameNumbers} from '../organisms/game/GameNumbers';
 import {usePageView} from '../particles/hooks/usePageView';
 import {GameDot} from '../atoms/game/GameDot';
+import {useSelector} from 'react-redux';
+import {AppSelectors} from '../../store/app/app-selectors';
 
 export const GameMobile: VFC = () => {
     usePageView('/game/mobile');
+    const Swipe = useSelector(AppSelectors.Swipe);
+
     return (
         <div className="flex flex-col p-4">
             <GameNumbers className="mx-auto gap-2" reverse={true} />
@@ -32,15 +36,19 @@ export const GameMobile: VFC = () => {
                 </div>
             </div>
             <div className="flex">
-                <div className="w-1/6 flex justify-center items-center">
-                    <GameDot />
-                </div>
-                <div className="w-2/3">
+                {Swipe && (
+                    <div className="w-1/6 flex justify-center items-center">
+                        <GameDot />
+                    </div>
+                )}
+                <div className="w-2/3 mx-auto">
                     <GameEngine />
                 </div>
-                <div className="w-1/6 flex justify-center items-center">
-                    <GameDot />
-                </div>
+                {Swipe && (
+                    <div className="w-1/6 flex justify-center items-center">
+                        <GameDot />
+                    </div>
+                )}
             </div>
             <div className="flex absolute bottom-14 left-4 right-4">
                 <GameControls className="w-full" transparent={true} />
