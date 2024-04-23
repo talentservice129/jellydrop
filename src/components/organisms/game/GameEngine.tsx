@@ -107,16 +107,16 @@ export const GameEngine: FC<ClassNameProps> = ({className}) => {
             const handleTouchMove = (e: TouchEvent) => {
                 [...e.changedTouches].forEach((touch) => {
                     const delta = Date.now() - prev;
+                    if (delta < 50) {
+                        return;
+                    }
                     prev = Date.now();
-                    // if (delta < 30) {
-                    //     return;
-                    // }
                     const delay = 500;
                     const touchEndX = touch.pageX;
                     const touchEndY = touch.pageY;
                     const deltaX = touchEndX - touchPrevX;
                     const deltaY = touchEndY - touchPrevY;
-                    const blockSize = window.innerWidth / 15;
+                    // const blockSize = window.innerWidth / 15;
                     touchPrevX = touchEndX;
                     touchPrevY = touchEndY;
                     // Determine the direction based on deltaX and deltaY
@@ -127,18 +127,14 @@ export const GameEngine: FC<ClassNameProps> = ({className}) => {
                         direction = deltaY > 0 ? 'down' : 'up';
                     }
                     console.log(`Swipe direction: ${direction}`);
-                    if (Math.abs(deltaX) > blockSize) {
-                        if (direction === 'left') {
-                            dispatch(
-                                GameActions.move(GamePlayerDirection.LEFT)
-                            );
-                        }
-                        if (direction === 'right') {
-                            dispatch(
-                                GameActions.move(GamePlayerDirection.RIGHT)
-                            );
-                        }
+                    // if (Math.abs(deltaX) > blockSize) {
+                    if (direction === 'left') {
+                        dispatch(GameActions.move(GamePlayerDirection.LEFT));
                     }
+                    if (direction === 'right') {
+                        dispatch(GameActions.move(GamePlayerDirection.RIGHT));
+                    }
+                    // }
                 });
             };
             document.addEventListener('touchmove', handleTouchMove);
