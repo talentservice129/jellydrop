@@ -1,3 +1,4 @@
+import classNames from 'classnames';
 import {FC, useEffect, useMemo, useRef, useState} from 'react';
 import {useSelector} from 'react-redux';
 import {environment} from '../../environment/environment';
@@ -41,9 +42,30 @@ export const Welcome: FC<WelcomeProps> = ({
         ];
     }, [startLevel]);
 
-    if (isSplash) {
-        return (
-            <div className="flex h-full relative splash-bg bg-black opacity-100">
+    // if (isSplash) {
+    //     return (
+    //         <div className="flex h-full ">
+    //             <button
+    //                 className="focus:outline-none outline-none text-3xl whitespace-nowrap absolute bottom-[15%] left-1/2 transform -translate-x-1/2"
+    //                 onClick={() => {
+    //                     setSplash(false);
+    //                 }}
+    //             >
+    //                 Press here to continue
+    //             </button>
+    //         </div>
+    //     );
+    // }
+
+    return (
+        // Main Screen Background
+        <div
+            className={classNames('flex flex-col h-full', {
+                'relative splash-bg bg-black opacity-100': isSplash,
+                ' main-bg': !isSplash
+            })}
+        >
+            {isSplash ? (
                 <button
                     className="focus:outline-none outline-none text-3xl whitespace-nowrap absolute bottom-[15%] left-1/2 transform -translate-x-1/2"
                     onClick={() => {
@@ -52,22 +74,19 @@ export const Welcome: FC<WelcomeProps> = ({
                 >
                     Press here to continue
                 </button>
-            </div>
-        );
-    }
-
-    return (
-        // Main Screen Background
-        <div className="flex flex-col h-full main-bg">
-            <div className="mt-auto mb-14 picture"></div>
-            <AppMenu className="w-44 ml-auto mr-auto" items={menu} />
-            <div className="ml-auto mr-auto mt-5 mb-auto"></div>
-            {music && (
-                <GameAudio
-                    src={AUDIO_BG}
-                    volume={musicVolume / 100}
-                    loop={true}
-                />
+            ) : (
+                <>
+                    <div className="mt-auto mb-14 picture"></div>
+                    <AppMenu className="w-44 ml-auto mr-auto" items={menu} />
+                    <div className="ml-auto mr-auto mt-5 mb-auto"></div>
+                    {music && (
+                        <GameAudio
+                            src={AUDIO_BG}
+                            volume={musicVolume / 100}
+                            loop={true}
+                        />
+                    )}
+                </>
             )}
         </div>
     );
