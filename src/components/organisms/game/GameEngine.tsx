@@ -107,7 +107,7 @@ export const GameEngine: FC<ClassNameProps> = ({className}) => {
             const handleTouchMove = (e: TouchEvent) => {
                 [...e.changedTouches].forEach((touch) => {
                     const delta = Date.now() - prev;
-                    if (delta < 50) {
+                    if (delta < 150) {
                         return;
                     }
                     prev = Date.now();
@@ -127,14 +127,12 @@ export const GameEngine: FC<ClassNameProps> = ({className}) => {
                         direction = deltaY > 0 ? 'down' : 'up';
                     }
                     console.log(`Swipe direction: ${direction}`);
-                    // if (Math.abs(deltaX) > blockSize) {
                     if (direction === 'left') {
                         dispatch(GameActions.move(GamePlayerDirection.LEFT));
                     }
                     if (direction === 'right') {
                         dispatch(GameActions.move(GamePlayerDirection.RIGHT));
                     }
-                    // }
                 });
             };
             document.addEventListener('touchmove', handleTouchMove);
