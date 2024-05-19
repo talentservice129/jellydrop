@@ -198,15 +198,15 @@
     box-shadow: 2px 2px 8px #7cd5fa;
 }
 
-@media screen and (orientation:portrait) {
-  body {
-    transform: rotate(90deg);
-    transform-origin: left top;
-    width: 100vh;
-    height: 100vw;
-    overflow-x: hidden;
-    position: absolute;
-    top: 0;
-    left: 100%;
+@media screen and (orientation: landscape) {
+    body {
+      transform: rotate(-90deg);
+      transform-origin: center center;
+      width: 100vh;
+      height: 100vw;
+      overflow-x: hidden;
+      position: absolute;
+      top: 100%;
+      left: 0;
+    }
   }
-}
