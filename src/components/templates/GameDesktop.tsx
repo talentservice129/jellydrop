@@ -44,7 +44,7 @@ export const GameDesktop: VFC<GameDesktopProps> = ({floatControls}) => {
                 <div className="flex absolute bottom-0 mb-5 w-full">
                     <div className="grid grid-cols-desktop gap-4 mx-auto">
                         <GameControls
-                            className="col-start-2"
+                            className="col-start-2 w-full"
                             transparent={true}
                         />
                     </div>

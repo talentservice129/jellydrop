@@ -59,7 +59,7 @@ export const GameControls: FC<GameControlsProps & ClassNameProps> = ({
                     transparent={Boolean(transparent)}
                     large={large}
                 >
-                    <div className="flex relative ml-auto ml-5 mr-5">
+                    <div className="flex relative ml-auto mr-5">
                         <GameHold
                             className="absolute top-0 left-0"
                             keyCode={hold}
