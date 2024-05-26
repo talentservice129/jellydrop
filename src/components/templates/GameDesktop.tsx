@@ -14,8 +14,11 @@ export const GameDesktop: VFC<GameDesktopProps> = ({floatControls}) => {
     usePageView('/game/desktop');
     return (
         <>
-            <div className="grid grid-cols-desktop opacity-90 gap-4 m-auto">
-                <div className="flex flex-col">
+            <div
+                className="grid opacity-90 gap-4 m-auto"
+                style={{gridTemplateColumns: '5rem 22rem 5rem'}}
+            >
+                <div className="flex flex-col mt-4">
                     <GamePieces
                         reverse={true}
                         className="p-4"
@@ -25,7 +28,7 @@ export const GameDesktop: VFC<GameDesktopProps> = ({floatControls}) => {
                     <GameNumbers className="flex-col mt-auto gap-4" />
                 </div>
                 <GameEngine />
-                <div className="flex flex-col">
+                <div className="flex flex-col mt-4">
                     <GamePieces
                         className="p-4"
                         label="Next"
@@ -34,7 +37,7 @@ export const GameDesktop: VFC<GameDesktopProps> = ({floatControls}) => {
                     />
                 </div>
                 {!floatControls && (
-                    <GameControls className="col-start-2 mt-5" />
+                    <GameControls className="col-start-2 mt-7" />
                 )}
             </div>
             {floatControls && (
