@@ -26,16 +26,20 @@ export const GameMobile: VFC = () => {
         <div className="flex flex-col p-4">
             <GameNumbers className="mx-auto gap-2" reverse={true} />
             <div
-                className={classNames(
-                    'border-gray-700 grid gap-4 mx-auto w-full'
-                    // {
-                    //     'flex justify-between w-full': Swipe === 'on',
-                    //     'grid grid-cols-desktop gap-2 mx-auto': Swipe !== 'on'
-                    // }
-                )}
-                style={{gridTemplateColumns: '1fr 4.4fr 1fr'}}
+                className={classNames('border-gray-700 w-full', {
+                    'flex justify-between': Swipe === 'on',
+                    'grid gap-4': Swipe !== 'on'
+                })}
+                style={
+                    Swipe !== 'on' ? {gridTemplateColumns: '1fr 4.4fr 1fr'} : {}
+                }
             >
-                <div className="flex flex-col mt-4">
+                <div
+                    className={classNames('flex flex-col', {
+                        'mt-4': Swipe !== 'on',
+                        'w-1/4': Swipe === 'on'
+                    })}
+                >
                     <GamePieces
                         className="p-1"
                         label="Hold"
@@ -43,17 +47,23 @@ export const GameMobile: VFC = () => {
                         selectPieces={GameSelectors.hold}
                     />
                 </div>
-                <GameEngine />
-                <div className="flex flex-col mt-4">
+                {Swipe !== 'on' && <GameEngine />}
+                <div
+                    className={classNames('flex flex-col', {
+                        'mt-4': Swipe !== 'on',
+                        'w-[70%]': Swipe === 'on'
+                    })}
+                >
                     <GamePieces
                         className="p-1"
                         label="Next"
                         reverse={true}
+                        horizontal={Swipe === 'on'}
                         selectPieces={GameSelectors.next}
                     />
                 </div>
             </div>
-            {/* {Swipe === 'on' && (
+            {Swipe === 'on' && (
                 <div className="flex">
                     <div className="w-1/6 flex flex-col justify-center items-center">
                         {hand === 'right' && (
@@ -91,12 +101,12 @@ export const GameMobile: VFC = () => {
                         )}
                     </div>
                 </div>
-            )} */}
-            {/* {Swipe !== 'on' && ( */}
-            <div className="flex">
-                <GameControls className="w-full" transparent={true} />
-            </div>
-            {/* )} */}
+            )}
+            {Swipe !== 'on' && (
+                <div className="flex">
+                    <GameControls className="w-full" transparent={true} />
+                </div>
+            )}
         </div>
     );
 };
