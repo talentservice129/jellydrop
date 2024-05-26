@@ -93,7 +93,7 @@ export const GameMobile: VFC = () => {
                 </div>
             )} */}
             {/* {Swipe !== 'on' && ( */}
-            <div className="flex absolute bottom-12 left-4 right-4">
+            <div className="flex px-4 mt-4">
                 <GameControls className="w-full" transparent={true} />
             </div>
             {/* )} */}
