@@ -217,13 +217,13 @@ export const GameEngine: FC<ClassNameProps> = ({className}) => {
                 <GameSoundTracks />
                 {starting && !loaded && (
                     <GamePreloader
-                        className="absolute w-full h-full -m-4"
+                        className="absolute w-full h-full"
                         onLoaded={() => setLoaded(true)}
                     />
                 )}
                 {starting && loaded && (
                     <GameTimer
-                        className="absolute w-full h-full -m-4"
+                        className="absolute w-full h-full"
                         onStart={() => dispatch(GameActions.run())}
                     />
                 )}

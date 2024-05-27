@@ -29,7 +29,7 @@ export const GameTimer: FC<GameTimerProps & ClassNameProps> = ({
             data-testid="game-timer"
             className={classNames(
                 className,
-                'flex font-mono items-center justify-center text-9xl'
+                'flex font-mono items-center !justify-center text-9xl'
             )}
         >
             {counter > 0 ? counter : ''}

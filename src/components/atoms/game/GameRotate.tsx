@@ -32,7 +32,7 @@ export const GameRotate: FC<GameRotateProps & ClassNameProps> = ({
 
     const btnClass = useMemo(
         () =>
-            classNames(className, 'flex text-lg items-center justify-center', {
+            classNames(className, 'flex text-lg items-center !justify-center', {
                 'w-14 h-14': !large,
                 'w-16 h-16': large
             }),
