@@ -45,7 +45,7 @@ export const UiDialog: FC<UiDialogProps & ClassNameProps> = ({
             onClose={onClose}
             fullScreen={fullScreen}
         >
-            <div className="ui-dialog-title text-primary">
+            <div className="ui-dialog-title text-primary !justify-center">
                 {title}
                 {large && (
                     <button
