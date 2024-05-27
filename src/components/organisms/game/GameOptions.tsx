@@ -19,11 +19,11 @@ export const GameOptions: FC<GameOptionsProps & ClassNameProps> = ({
 }) => {
     return (
         <div className={classNames(className, 'flex flex-col')}>
-            <div className="grid grid-cols-2 gap-2">
-                {/* <OptionsKeyBindings /> */}
-                <OptionsGame />
-                {/* <OptionsAudio /> */}
-                {/* <UiButton
+            {/* <div className="grid grid-cols-2 gap-2"> */}
+            {/* <OptionsKeyBindings /> */}
+            <OptionsGame />
+            {/* <OptionsAudio /> */}
+            {/* <UiButton
                     className="mt-3 py-2"
                     onClick={() => dispatch(AppActions.resetScore())}
                 >
@@ -35,7 +35,7 @@ export const GameOptions: FC<GameOptionsProps & ClassNameProps> = ({
                 >
                     Reset Options
                 </UiButton> */}
-            </div>
+            {/* </div> */}
         </div>
     );
 };

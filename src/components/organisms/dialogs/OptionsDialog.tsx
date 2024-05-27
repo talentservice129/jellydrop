@@ -60,8 +60,11 @@ export const OptionsDialog: FC<OptionsDialogProps & Partial<AppDialogControl>> =
                 large={true}
                 selectOpen={selectOpen}
             >
-                <GameOptions className="mb-5" darkMode={!welcoming} />
-                <AppBar tools={tools} />
+                <AppBar
+                    className="mb-5 !justify-center gap-x-5"
+                    tools={tools}
+                />
+                <GameOptions darkMode={!welcoming} />
             </AppDialog>
         );
     };
