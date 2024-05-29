@@ -15,7 +15,7 @@ export const GameToast: FC<GameToastProps & ClassNameProps> = ({
             data-testid="game-toast"
             className={classNames(
                 className,
-                'flex font-mono items-center justify-center text-4xl'
+                'flex font-mono items-center !justify-center text-4xl'
             )}
         >
             {message}
