@@ -37,7 +37,7 @@ export const GameDigits: FC<GameDigitsProps & ClassNameProps> = ({
         <div
             className={classNames(
                 className,
-                'flex relative leading-none font-digits p-2'
+                'flex relative leading-none font-digits py-2 sm:px-2'
             )}
         >
             <div className="relative mx-auto">
