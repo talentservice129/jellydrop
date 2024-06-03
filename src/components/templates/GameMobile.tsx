@@ -23,7 +23,7 @@ export const GameMobile: VFC = () => {
     const dispatch = useAppDispatch();
 
     return (
-        <div className="flex flex-col p-4">
+        <div className="flex flex-col h-full justify-evenly p-4">
             <GameNumbers className="mx-auto gap-2" reverse={true} />
             <div
                 className={classNames('border-gray-700 w-full', {
